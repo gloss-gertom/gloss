@@ -1,4 +1,18 @@
 DemoGloss::Application.routes.draw do
+  get "page/home"
+
+  get "page/about"
+
+  get "page/contact"
+
+  get "page/register"
+
+  get "page/help"
+
+  get "page/services"
+
+  get "demo/index"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

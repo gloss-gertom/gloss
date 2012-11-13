@@ -4,11 +4,293 @@
   <title>DemoGloss</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
   <%= csrf_meta_tags %>
 </head>
-<body>
 
-<%= yield %>
+<body>
+<div id="wrapper">
+  <div id="header">
+    <div class="centerContent">
+      <section class="left" id="login">
+        <h1>Login</h1>
+        <form action="#" method="post" name="login" id="login_form">
+          <input name="username" type="text" id="username" tabindex="10" placeholder="username">
+          <input name="password" type="password" id="password" tabindex="20" placeholder="********">
+          <input name="login_submit" type="submit" id="login_submit" value="Login" tabindex="30">
+
+        </form>
+        <p>Not a user? <strong><a href="#" class="register">Register</a></strong><span class="go_arrow"> &gt; </span></p>
+        <p><strong><a href="#">Forgot password ?</a></strong></p>
+      </section><!--End #login-->
+      <header class="left" id="pageHeading">
+        <hgroup>
+          <h1>Cardboard </h1>
+          <h2>Online Shop </h2>
+        </hgroup>
+      </header>
+      <section class="right" id="cart">
+        <h1>Cart</h1>
+        <ul>
+          <li class="cart_prod">3 Products</li>
+          <li class="cart_total">€334.89</li>
+        </ul>
+        <a href="shopping_cart.html" title="View Cart">View</a>
+      </section><!--End #cart-->
+    </div><!--End .centerContent-->
+  </div><!--End #header-->
+  <div class="centerContent bodyContent">
+    <div class="clearBoth" id="subNav">
+      <ul>
+        <li><a href="<a href="index.html">Home </a><span>Welcome to  Cardboard!</span></li>
+        <li><a href="about.html">About </a><span>Who we are</span></li>
+        <li><a href="#">Contact Us</a> <span class="contain">For everything
+you want</span></li>
+        <li><a href="#">Register</a> <span class="contain">Discover
+the advantages</span></li>
+        <li><a href="help.html">Help</a> <span>Got Questions?</span></li>
+        <li><a href="our_services.html">Our Services</a> <span class="contain">What we have
+to offer</span></li>
+      </ul>
+    </div><!--End #subNav-->
+    <div class="clearLeft" id="navBar">
+      <nav>
+        <h1>Main Navigation for Products</h1>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#">Accessories</a></li>
+          <li><a href="#">Frees Time</a></li>
+          <li><a href="product_category.html">Kitchen</a></li>
+          <!--<ul>
+              <li><a href="#">Mugs</a></li>
+              <li><a href="#">Appliances</a></li>
+              <li><a href="#">Pottery</a></li>
+              <li><a href="#">Textiles</a></li>
+              <li><a href="3">Decoration</a></li>
+          </ul>-->
+          <li><a href="#">Books</a></li>
+          <li><a href="#">Electronics</a></li>
+          <li><a href="#">T&ndash;Shirts</a></li>
+          <li><a href="#">Furniture</a></li>
+        </ul>
+      </nav>
+      <div class="right" id="search">
+        <form action="#" method="get" name="search" id="search">
+          <input name="search" type="text" id="search_input" placeholder="search">
+          <input name="searchSite" type="submit" id="searchSite" value="go">
+        </form>
+      </div>
+    </div><!--End #navBar-->
+
+    <!--This is the area that is going to be truly Dynamic ___RUBY ON RAILS GENERATED CONTENT___ -->
+
+    <div id="content">
+      <div class="clearBoth" id="slider">
+        <%= image_tag "slider_holder.jpg", :height => '310', :width => '941', :alt => " " %>
+      </div><!--End #slider-->
+
+                     <!--FEATURED LIST-->
+      <section class="productList featurList">
+        <header class="featured"><h1 class="catalog">Featured Products <%= yield %></h1></header>
+        <article class="threeAcross">
+
+          <%= image_tag "products/full/kettle.jpg", :width => "298", :height => "139", :alt =>" " %>
+          <div class="a_content"> <p>In: <span class="cat_title">Accessories</span></p>
+            <header><h2 class="item_title">Consectetur</h2></header>
+            <p class="item_desc"> | Lorem ipsum dolor sit amet, adipiscing elit. Quisque at faucibus ligula. - <strong>$19.99</strong></p>
+            <p class="learn_more"><a href="#" title="Item Description">More</a><span class="go_arrow"> &gt; </span></p>
+            <form name="addToCart" class="addToCart" action="">
+              <input type="submit" value="Add To Cart" name="updateCart" class="updateCart" />
+            </form>
+          </div><!--a_content-->
+        </article><!--End threeAcross -->
+
+        <article class="threeAcross">
+
+          <%= image_tag "products/full/jug.jpg", :width => "298", :height => "139", :alt =>" " %>
+          <div class="a_content"> <p>In: <span class="cat_title">Furniture</span></p>
+            <header><h2 class="item_title">Consectetur</h2></header><p class="item_desc"> | Lorem ipsum dolor sit amet, adipiscing elit. Quisque at faucibus ligula. - <strong>$19.99</strong></p>
+            <p class="learn_more"><a href="#" title="Item Description">More</a><span class="go_arrow"> &gt; </span></p>
+            <form name="addToCart" class="addToCart" action="">
+              <input type="submit" value="Add To Cart" name="updateCart" class="updateCart" />
+            </form>
+          </div><!-- a_content -->
+
+        </article><!--End threeAcross 2-->
+
+        <article class="threeAcross end">
+
+          <%= image_tag "products/full/t-shirt.jpg", :width => "298", :height => "139", :alt =>" " %>
+          <div class="a_content"><p>In: <span class="cat_title">T&ndash;Shirts</span></p>
+            <header><h2 class="item_title">Consectetur</h2></header><p class="item_desc"> | Lorem ipsum dolor sit amet, adipiscing elit. Quisque at faucibus ligula. - <strong>$19.99</strong></p>
+            <p class="learn_more"><a href="#" title="Item Description">More</a><span class="go_arrow"> &gt; </span></p>
+            <form name="addToCart" class="addToCart" action="">
+              <input type="submit" value="Add To Cart" name="updateCart" class="updateCart" />
+            </form>
+          </div><!--a_content-->
+        </article><!--End threeAcross 3-->
+
+        <div class="clearLeft"></div>
+        <a href="#" title="More Offers" class="moreOffers">More Offers</a>
+      </section>
+
+      <!--End FEATURED LIST-->
+
+      <!--START SPECIALS-->
+      <section class="productList">
+        <header class="special">
+          <h1 class="catalog">Special Offer5</h1></header>
+        <article class="fourAcross">
+          <%= image_tag "products/small/cushion.jpg", :width => "218", :height => "138", :alt =>" " %>
+          <div class="a_content">
+            <header><h2>Consectetur | <span class="cat_title">Accessories</span></h2></header>
+            <p>Lorem Ipsum dolor - <strong>$19.99</strong></p>
+            <p class="learn_more"><a href="#" title="Item Description">More</a><span class="go_arrow"> &gt; </span></p>
+            <form name="addToCart" class="addToCart" action="">
+              <input type="submit" value="Add To Cart" name="updateCart" class="updateCart" />
+            </form>
+          </div><!--a_content-->
+        </article><!--End fourAcross 1-->
+        <article class="fourAcross">
+          <%= image_tag "products/small/clock.jpg", :width => "218", :height => "138", :alt =>" " %>
+          <div class="a_content">
+            <header><h2>Consectetur | <span class="cat_title">Accessories</span></h2></header>
+            <p>Lorem Ipsum dolor - <strong>$19.99</strong></p>
+            <p class="learn_more"><a href="#" title="Item Description">More</a><span class="go_arrow"> &gt; </span></p>
+            <form name="addToCart" class="addToCart" action="">
+              <input type="submit" value="Add To Cart" name="updateCart" class="updateCart" />
+            </form>
+          </div><!--a_content-->
+        </article><!--End fourAcross 2-->
+        <article class="fourAcross">
+          <%= image_tag "products/small/furniture.jpg", :width => "218", :height => "138", :alt =>" " %>
+          <div class="a_content">
+            <header><h2>Consectetur | <span class="cat_title">Accessories</span></h2></header>
+            <p>Lorem Ipsum dolor - <strong>$19.99</strong></p>
+            <p class="learn_more"><a href="#" title="Item Description">More</a><span class="go_arrow"> &gt; </span></p>
+            <form name="addToCart" class="addToCart" action="">
+              <input type="submit" value="Add To Cart" name="updateCart" class="updateCart" />
+            </form>
+          </div><!--a_content-->
+        </article><!--End fourAcross 3-->
+        <article class="fourAcross end">
+          <%= image_tag "products/small/blue-shirt.jpg", :width => "218", :height => "138", :alt =>" " %>
+          <div class="a_content">
+            <header> <h2>Consectetur | <span class="cat_title">Accessories</span></h2></header>
+            <p>Lorem Ipsum dolor - <strong>$19.99</strong></p>
+            <p class="learn_more"><a href="#" title="Item Description">More</a><span class="go_arrow"> &gt; </span></p>
+            <form name="addToCart" class="addToCart" action="">
+              <input type="submit" value="Add To Cart" name="updateCart" class="updateCart" />
+            </form>
+          </div><!--a_content-->
+        </article><!--End fourAcross 4-->
+        <div class="clearLeft"></div>
+        <a href="#" title="More Offers" class="specialOffers">More Offers</a>
+      </section>
+      <!--End Special Offers Section-->
+
+    </div><!--End .content -->
+  </div><!--End .centerContent-->
+  <div class="clearLeft"></div>
+</div><!--End #wrapper-->
+<div class="centerContent clearLeft ">
+  <section class="about">
+    <div class="fourAcross">
+      <header><h1>About Us</h1></header>
+
+      <h2>Lorem ipsum dolor </h2>
+      <p>Sit amet, consectetur adipiscing elit. Integer pellentesque, leo eget commodo iaculis, leo leo consectetur dui, quis pellentesque lectus neque eu orci.</p>
+
+      <p>Vestibulum eleifend nisi diam. <a href="#" class="learn_more">Contact us</a> or Integer pellentesque, leo eget. Phasellus et est vitae .</p>
+    </div><!--End FourAcross 1-->
+    <div class="fourAcross fontPlace">
+      <h2>Shipping Info</h2>
+      <p>Phasellus et est vitae lorem posuere congue sed nec quam. <a href="#" class="learn_more">More</a></p>
+
+      <h2>Delivery</h2>
+      <p>Aliquam vel tortor a augue fringilla fringilla sit amet ac nunc. Phasellus et est vitae. Sit amet, consectetur adipiscing elit. Integer pellentesque.  <a href="#" class="learn_more">More</a></p>
+    </div><!--end FourAcross 2 -->
+    <div class="fourAcross fontPlace">
+      <h2>Newsletter</h2>
+      <p>Sign up to our newsletter!</p>
+      <form name="newsLetter" method="post" action="" id="newsLetter">
+        <input type="text" name="name" id="news_name">
+        <input type="email" name="email" id="news_email">
+        <input type="submit" name="submit" id="news_submit" value="Submit">
+      </form>
+      <div class="followUs">
+        <p>Follow Us:</p>
+        <a href="#" title=" "> <%= image_tag "rss.jpg", :width => "17", :height => "19", :alt =>" " %></a>
+        <a href="#" title=" "><%= image_tag "sv.jpg", :width => "18", :height => "19", :alt =>" " %></a>
+        <a href="#" title=" "><%= image_tag "2.jpg", :width => "18", :height => "19", :alt =>" " %></a>
+        <a href="#" title=" "><%= image_tag "ic.jpg", :width => "16", :height => "18", :alt =>" " %></a>
+        <a href="#" title=" "><%= image_tag "facebook.jpg", :width => "17", :height => "19", :alt =>" " %></a>
+        <a href="#" title=" "><%= image_tag "twitter.jpg", :width => "21", :height => "19", :alt =>" " %></a>
+      </div><!--end followUs-->
+    </div><!--end FourAcross 3 -->
+    <div class="fourAcross fontPlace end">
+      <h2>Payment Options</h2>
+      <div><!--card wrap-around-->
+        <a href="#" title="Pay by Visa"><%= image_tag "visa.jpg", :width => "49", :height => "32", :alt =>" Pay by Visa" %></a>
+        <a href="#" title="Pay by Visa Electron"><%= image_tag "visa_electrom.jpg", :width => "50", :height => "32", :alt =>" Pay by Visa Electron" %></a>
+        <a href="#" title="Pay by American Express"><%= image_tag "american_express.jpg", :width => "49", :height => "32", :alt =>" Pay by American Express" %></a>
+        <a href="#" title="Pay by Paypal"><%= image_tag "paypal.jpg", :width => "48", :height => "32", :alt =>" Pay by Paypal" %></a>
+      </div><!--end credit card wrap-around-->
+      <a href="mailto:lowrygerard@eircom.net" id="contact">Contact Us</a>
+      <a href="#" title="Call US" id="call">Call Us 800-111-111</a>
+    </div><!--end FourAcross 4 -->
+  </section>
+  <div class="clearLeft"></div>
+</div><!--End .centerContent-->
+<div id="footer">
+  <footer>
+    <div class="centerContent">
+
+      <header><h2>Cardboard Online Shop Internal Links</h2></header>
+      <div class="navContainer left">
+        <ul>
+          <li><a href="#">» Home</a></li>
+          <li><a href="#">» Register</a></li>
+          <li><a href="#">» Contact Us</a></li>
+          <li><a href="#">» Help</a></li>
+          <li><a href="#">» Our Services</a></li>
+        </ul>
+
+      </div><!--End .navContainer-->
+      <div class="navContainer left">
+        <ul>
+          <li><a href="#">House</a></li>
+          <li><a href="#">Accessories</a></li>
+          <li><a href="#">Free Time</a></li>
+          <li><a href="#">Sport</a></li>
+          <li><a href="#">Books</a></li>
+          <li><a href="#">Electronics</a></li>
+        </ul>
+      </div><!--End .navContainer-->
+      <div class="navContainer left">
+        <ul>
+          <li><a href="#">T-shirts</a></li>
+          <li><a href="#">Mugs</a></li>
+          <li><a href="#">Shirts</a></li>
+          <li><a href="#">&nbsp;</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Shipping and Payment</a></li>
+        </ul>
+      </div><!--End .navContainer-->
+      <div class="navContainer left">
+        <h3>Contact Info</h3>
+        <address>111 Lorem Ipsu Ave - 01234 Seattle, WA<br />
+          T. (111) 111-22333<br />
+          F. (111) 111-22333 <br />
+          info@cardboardshop.com</address>
+      </div><!--End .navContainer-->
+      <p class="clearLeft" id="copyRight">&copy; Cardboard Online Store 2011</p>
+
+    </div><!--End .centerContent-->
+  </footer>
+</div>
 
 </body>
 </html>
