@@ -1,2 +1,79 @@
-<h1>Page#services</h1>
-<p>Find me in app/views/page/services.html.erb</p>
+<div id="breadcrumbs">
+  <ul>
+    <li><a href="#">Home &gt;&gt;</a></li>
+    <li><a href="#">About Us</a></li>
+
+  </ul>
+</div><!--end breadcrumbs-->
+<section class="services">
+  <header><h1>Our Services</h1></header>
+  <p><span class="intro">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin et orci id purus scelerisque placerat a non magna. Nam mi libero, aliquam eu tempus non, volutpat a libero. Vestibulum vitae porttitor sem. Curabitur quis mi diam, ut malesuada lacus. Cras fermentum lacinia est tristique luctus.</span> </p>
+  <blockquote class="left"><span class="quote">"</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Vestibulum vitae felis eget lacus euismod. Vestibulum vitae felis eget lacus euismod elementum ac vitae dolor.  <span class="highlight">(John Doe, Minneapolis)</span></blockquote>
+  <blockquote class="right"><span class="quote">"</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Vestibulum vitae felis eget lacus euismod. Vestibulum vitae felis eget lacus euismod elementum ac vitae dolor.  <span class="highlight">(John Doe, Minneapolis)</span></blockquote>
+  <article class="left shippingInfo">
+    <%= image_tag "shipping.jpg", :width => "90", :height => "90", :alt =>" ", :class => "left" %>
+    <header><h2>Fast Shipping</h2></header>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam erat ante, ornare ut sollicitudin ut, scelerisque sed neque.
+      Vestibulum vitae felis eget lacus euismod elementum ac vitae dolor. Nulla velit eros, bibendum id molestie ac, pretium arcu. <a href="#">More info</a></p>
+  </article>
+  <article class="left reimburse">
+    <%= image_tag "happy.jpg", :width => "90", :height => "90", :alt =>" ", :class => "left" %>
+    <header><h2>Satisfied or Reimbursed</h2></header>
+    <p>Mauris commodo fringilla purus, at condimentum magna dignissim quis. Sed augue nisi, ornare non laoreet non, euismod.
+      In at ultricies mauris. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante ipsum primis in. <a href="#">More info</a>
+    </p>
+  </article>
+  <article class="left quality">
+    <%= image_tag "quality.jpg", :width => "90", :height => "90", :alt =>" ", :class => "left" %>
+    <header><h2>Only the Best Quality</h2></header>
+    <p>Curae; Donec venenatis faucibus molestie. Nunc ac nunc nec tortor congue viverra. Nulla cursus aliquet.
+      Ut sed nulla elementum felis malesuada egestas et a velit. Nulla cursus aliquet urna eu elementum. Duis varius felis nec dui. <a href="#">More info</a></p>
+  </article>
+  <div class="clearLeft"></div>
+  <h2>Our Most Popular Items</h2>
+  <article class="fourAcross">
+    <%= image_tag "products/small/fork.jpg", :width => "218", :height => "138", :alt =>" " %>
+    <div class="a_content">
+      <header><h2>Consectetur | <span class="cat_title">Accessories</span></h2></header>
+      <p>Lorem Ipsum dolor - <strong>$19.99</strong></p>
+      <p class="learn_more"><a href="#" title="Item Description">More</a><span class="go_arrow"> &gt; </span></p>
+      <form name="addToCart" class="addToCart" action="">
+        <input type="submit" value="Add To Cart" name="updateCart" class="updateCart" />
+      </form>
+    </div><!--a_content-->
+  </article><!--End fourAcross 1-->
+  <article class="fourAcross">
+    <%= image_tag "products/small/bottle.jpg", :width => "218", :height => "138", :alt =>" " %>
+    <div class="a_content">
+      <header><h2>Consectetur | <span class="cat_title">Accessories</span></h2></header>
+      <p>Lorem Ipsum dolor - <strong>$19.99</strong></p>
+      <p class="learn_more"><a href="#" title="Item Description">More</a><span class="go_arrow"> &gt; </span></p>
+      <form name="addToCart" class="addToCart" action="">
+        <input type="submit" value="Add To Cart" name="updateCart" class="updateCart" />
+      </form>
+    </div><!--a_content-->
+  </article><!--End fourAcross 2-->
+  <article class="fourAcross">
+    <%= image_tag "products/small/clock.jpg", :width => "218", :height => "138", :alt =>" " %>
+    <div class="a_content">
+      <header><h2>Consectetur | <span class="cat_title">Accessories</span></h2></header>
+      <p>Lorem Ipsum dolor - <strong>$19.99</strong></p>
+      <p class="learn_more"><a href="#" title="Item Description">More</a><span class="go_arrow"> &gt; </span></p>
+      <form name="addToCart" class="addToCart" action="">
+        <input type="submit" value="Add To Cart" name="updateCart" class="updateCart" />
+      </form>
+    </div><!--a_content-->
+  </article><!--End fourAcross 3-->
+  <article class="fourAcross end">
+    <%= image_tag "products/small/red_shirt.jpg", :width => "218", :height => "138", :alt =>" " %>
+    <div class="a_content">
+      <header> <h2>Consectetur | <span class="cat_title">Accessories</span></h2></header>
+      <p>Lorem Ipsum dolor - <strong>$19.99</strong></p>
+      <p class="learn_more"><a href="#" title="Item Description">More</a><span class="go_arrow"> &gt; </span></p>
+      <form name="addToCart" class="addToCart" action="">
+        <input type="submit" value="Add To Cart" name="updateCart" class="updateCart" />
+      </form>
+    </div><!--a_content-->
+  </article><!--End fourAcross 4-->
+  <div class="clearLeft"></div>
+</section>
