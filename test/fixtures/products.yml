@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  description: MyString
+  unit_type: MyString
+  qty_per_unit: 1.5
+  unit_price: 1.5
+  current_level: 1
+  reorder_level: 1
+  on_order_qty: 1
+  allocated_qty: 1
+  image_url: MyString
+  special_offer: false
+  featured_product: false
+  category_id: 1
+
+two:
+  name: MyString
+  description: MyString
+  unit_type: MyString
+  qty_per_unit: 1.5
+  unit_price: 1.5
+  current_level: 1
+  reorder_level: 1
+  on_order_qty: 1
+  allocated_qty: 1
+  image_url: MyString
+  special_offer: false
+  featured_product: false
+  category_id: 1
