@@ -27,6 +27,7 @@ cat=Category.new
 cat.id = 4
 cat.category_name = "TV"
 cat.save
+########################################
 
 
 
