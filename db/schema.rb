@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121121155849) do
+ActiveRecord::Schema.define(:version => 20121127202533) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -50,6 +50,24 @@ ActiveRecord::Schema.define(:version => 20121121155849) do
     t.string   "category_name"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
+  end
+
+  create_table "customers", :force => true do |t|
+    t.string   "username",        :limit => 12
+    t.string   "hashed_password", :limit => 45
+    t.string   "first_name",      :limit => 45
+    t.string   "last_name",       :limit => 45
+    t.string   "address_1",       :limit => 45
+    t.string   "address_2",       :limit => 45
+    t.string   "address_3",       :limit => 45
+    t.string   "city",            :limit => 45
+    t.string   "postcode",        :limit => 45
+    t.string   "county",          :limit => 45
+    t.string   "country",         :limit => 45
+    t.string   "tel_no",          :limit => 45
+    t.string   "email",           :limit => 45
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
   end
 
   create_table "products", :force => true do |t|

@@ -1,4 +1,14 @@
 DemoGloss::Application.routes.draw do
+  get "customers/new"
+
+  get "customers/create"
+
+  get "customers/edit"
+
+  get "customers/update"
+
+  get "customers/delete"
+
   ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config
@@ -61,12 +71,12 @@ DemoGloss::Application.routes.draw do
   #   namespace :admin do
   #     # Directs /admin/products/* to Admin::ProductsController
   #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
+       resources :customers
   #   end
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+   root :to => 'page#home'
 
   # See how all your routes lay out with "rake routes"
 

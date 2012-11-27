@@ -43,15 +43,15 @@
   </div><!--End #header-->
   <div class="centerContent bodyContent">
     <div class="clearBoth" id="subNav">
-      <ul>
-        <li><a href="<a href="index.html">Home </a><span>Welcome to  Cardboard!</span></li>
-        <li><a href="about.html">About </a><span>Who we are</span></li>
+      <ul>    <% #TODO Create a partial to tidy up code %>
+        <li><%= link_to "Home", :controller => 'page', :action => 'home' %><span>Welcome to  Cardboard!</span></li>
+        <li><%=link_to "About", :controller => 'page', :action => 'about' %><span>Who we are</span></li>
         <li><a href="#">Contact Us</a> <span class="contain">For everything
 you want</span></li>
-        <li><a href="#">Register</a> <span class="contain">Discover
+        <li><%= link_to "Register", :controller => 'customers', :action => 'new'  %> <span class="contain">Discover
 the advantages</span></li>
-        <li><a href="help.html">Help</a> <span>Got Questions?</span></li>
-        <li><a href="our_services.html">Our Services</a> <span class="contain">What we have
+        <li><%=  link_to "Help", :controller => 'page', :action => 'help' %> <span>Got Questions?</span></li>
+        <li><%= link_to "Our Services", :controller => 'page', :action => 'services' %> <span class="contain">What we have
 to offer</span></li>
       </ul>
     </div><!--End #subNav-->
@@ -59,7 +59,7 @@ to offer</span></li>
       <nav>
         <h1>Main Navigation for Products</h1>
         <ul>
-          <li><a href="index.html">Home</a></li>
+          <li><%= link_to "Home", :controller => 'page', :action => 'home' %></li>
           <li><a href="#">Accessories</a></li>
           <li><a href="#">Frees Time</a></li>
           <li><a href="product_category.html">Kitchen</a></li>
