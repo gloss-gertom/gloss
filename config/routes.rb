@@ -72,6 +72,9 @@ DemoGloss::Application.routes.draw do
   #     # Directs /admin/products/* to Admin::ProductsController
   #     # (app/controllers/admin/products_controller.rb)
        resources :customers
+       # Define a resource for session only need to create or destroy
+       # a single session at a time
+       resource :session
   #   end
 
   # You can have the root of your site routed with "root"
@@ -83,4 +86,6 @@ DemoGloss::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
+  match '/login' => "sessions#new", :as => "login"
+  match '/logout' => "sessions#destroy", :as => "logout"
 end

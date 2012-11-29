@@ -87,6 +87,9 @@ to offer</span></li>
 
 
     <div id="content">
+      <% if flash[:notice] %>
+          <div id="notice"><%= flash[:notice] %></div>
+      <% end %>
       <%=  yield %>                   <!--This is the area that is going to be truly Dynamic ___RUBY ON RAILS GENERATED CONTENT___ -->
     </div><!--End .content -->
   </div><!--End .centerContent-->

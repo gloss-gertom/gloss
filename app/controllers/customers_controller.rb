@@ -8,8 +8,8 @@ class CustomersController < ApplicationController
     if @customer.save
       redirect_to page_home_path, :notice => "Account Created"
     else
-      #TODO Need to redirect
-      render :action => 'page/about'
+      #TODO Need to re-think what and where notice is displayed
+      redirect_to customers_new_path, :notice => "Registration Failed"
     end
   end
 
