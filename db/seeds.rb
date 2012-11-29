@@ -309,3 +309,18 @@ prod.image_url = "samsunghd40-f.jpg"
 prod.special_offer = false
 prod.featured_product = false
 prod.save
+
+# Some Customer seed data to work with
+customer = Customer.create :username => 'Tom',
+                           :password => 'secret',
+                           :first_name => 'Thomas',
+                           :last_name => 'Student',
+                           :address_1 => 'Line 1',
+                           :address_2 => 'Line 2',
+                           :address_3 => 'Line 3',
+                           :city => 'City1',
+                           :postcode => 'Postcode',
+                           :county => 'County',
+                           :country => 'Country',
+                           :tel_no => '1234567',
+                           :email => 'email@email.com'

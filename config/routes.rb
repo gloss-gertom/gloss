@@ -1,4 +1,14 @@
 DemoGloss::Application.routes.draw do
+  get "customers/new"
+
+  get "customers/create"
+
+  get "customers/edit"
+
+  get "customers/update"
+
+  get "customers/delete"
+
   ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config
@@ -61,16 +71,21 @@ DemoGloss::Application.routes.draw do
   #   namespace :admin do
   #     # Directs /admin/products/* to Admin::ProductsController
   #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
+       resources :customers
+       # Define a resource for session only need to create or destroy
+       # a single session at a time
+       resource :session
   #   end
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+   root :to => 'page#home'
 
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
+  match '/login' => "sessions#new", :as => "login"
+  match '/logout' => "sessions#destroy", :as => "logout"
 end
