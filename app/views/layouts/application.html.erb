@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>DemoGloss</title>
+  <title><%=  @page_title %></title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <!--[if lt IE 9]>
@@ -16,13 +16,8 @@
     <div class="centerContent">
       <section class="left" id="login">
         <h1>Login</h1>
-        <form action="#" method="post" name="login" id="login_form">
-          <input name="username" type="text" id="username" tabindex="10" placeholder="username">
-          <input name="password" type="password" id="password" tabindex="20" placeholder="********">
-          <input name="login_submit" type="submit" id="login_submit" value="Login" tabindex="30">
-
-        </form>
-        <p>Not a user? <strong><a href="#" class="register">Register</a></strong><span class="go_arrow"> &gt; </span></p>
+        <%= render :partial => "sessions/form"  %>
+        <p>Not a user? <strong> <%= link_to "Register", :controller => 'customers', :action => 'new', :class => 'register' %></strong><span class="go_arrow"> &gt; </span></p>
         <p><strong><a href="#">Forgot password ?</a></strong></p>
       </section><!--End #login-->
       <header class="left" id="pageHeading">
