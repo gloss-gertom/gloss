@@ -1,0 +1,64 @@
+<div id="content">
+  <div id="breadcrumbs">
+    <ul>
+      <li><a href="#">Home &gt;&gt;</a></li>
+      <li><a href="#">Kitchen &gt;&gt;</a></li>
+      <li><a href="#">Pottery &gt;&gt;</a></li>
+      <li><a href="#">Haiku</a></li>
+    </ul>
+  </div>
+  <!--end breadcrumbs-->
+
+  <section class="productList page">
+    <div class="topPagination">
+      <ol class="pagination">
+        <li><a href="product_list.html?page=1" rel="prev">Prev</a></li>
+        <li><a href="product_list.html?page=1">1</a></li>
+        <li class="selected">2</li>
+        <li><a href="product_list.html?page=3">3</a></li>
+        <li><a href="product_list.html?page=4">4</a></li>
+        <li><a href="product_list.html?page=5">5</a></li>
+        <li><a href="product_list.html?page=3" rel="next">Next</a></li>
+      </ol>
+    </div>
+    <!--end topPagination-->
+    <header class="special">
+      <h1 class="catalog">category goes here</h1></header>
+
+    <% @products.each do |product| %>
+      <article class="fourAcross">
+      <!--<img name="item" src="images/products/small/red_shirt.jpg" width="218" height="139" alt=" " style="background-color: #999999"> -->
+      <%= image_tag(product.image_url, :width => "218", :height => "139", :alt => " ", :style => "background-color: #999999" ) %>
+      <div class="a_content">
+        <header><h2>Product | <span class="cat_title"><%= product.name %></span></h2></header>
+        <p><%= product.description %> - <strong><%= number_to_currency(product.unit_price, :unit => '&euro;') %></strong></p>
+
+        <!--<p class="learn_more"><a href="#" title="Item Description">More</a><span class="go_arrow"> &gt; </span></p> -->
+        <p class="learn_more"><%= link_to 'More', product %><span class="go_arrow"> &gt; </span></p>
+
+        <form name="addToCart" class="addToCart" action="">
+          <input type="submit" value="Add To Cart" name="updateCart" class="updateCart"/>
+        </form>
+      </div>
+      <!--a_content-->
+    </article>
+     <!--End fourAcross-->
+    <% end %>
+    <div class="clearLeft"></div>
+
+    <div class="bottomPagination">
+      <ol class="pagination">
+        <li><a href="product_list.html?page=1" rel="prev">Prev</a></li>
+        <li><a href="product_list.html?page=1">1</a></li>
+        <li class="selected">2</li>
+        <li><a href="product_list.html?page=3">3</a></li>
+        <li><a href="product_list.html?page=4">4</a></li>
+        <li><a href="product_list.html?page=5">5</a></li>
+        <li><a href="product_list.html?page=3" rel="next">Next</a></li>
+      </ol>
+    </div>
+    <!--end bottomPagination-->
+
+  </section>
+  <!--End Similar Items Section-->
+</div><!--end content -->
