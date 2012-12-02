@@ -17,7 +17,6 @@
     <a href="#" title="Back To List">Back To List</a>
   </div><!--end backToList-->
   <div id="productItem">
-    <!--<img src="images/products/full/haiku.jpg" width="457" height="308" alt="Product Title" class="left">  -->
     <%= image_tag(@product.image_url, :width => "457", :height => "308", :class=> "left") %>
     <p id="price"><%= number_to_currency(@product.unit_price, :unit => '&euro;') %></p>
     <p id="itemId">ID:#<%= @product.id %></p>
@@ -26,7 +25,7 @@
 
     <form action=" " method="post" name="product_choice" id="details">
       <!-- This section to be replaced by form element for choosing a colour -->
-      <img src="images/choose.jpg" width="212" height="23">
+      <!--<img src="images/choose.jpg" width="212" height="23"> -->
       <!--end replacement area -->
       <input type="text" title="Update Quantity In Cart" class="quantity" size="4" maxlength="4" name="quantity" value="1">
       <input name="updateCart" type="submit" id="updateCart" title="Add To Cart" value="Add To Cart">
