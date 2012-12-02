@@ -1,12 +1,7 @@
+<% @page_title = "Gloss - Customer login/logout" %>
 <section class="left" id="login">
   <h1>Login</h1>
-  <%= form_tag session_path  do %>
-  <%= label_tag :username %>
-  <%= text_field_tag :username %>
-  <%= label_tag :password %>
-  <%= text_field_tag :password %>
-  <%=  submit_tag 'login' %>
-  <% end %>
+    <%= render :partial => "form"  %>
   <p>Not a user? <strong><a href="#" class="register">Register</a></strong><span class="go_arrow"> &gt; </span></p>
   <p><strong><a href="#">Forgot password ?</a></strong></p>
 </section><!--End #login-->
