@@ -1,3 +1,4 @@
+
 function myFocus(element) {
     if (element.value == element.defaultValue) {
         element.value = '';
