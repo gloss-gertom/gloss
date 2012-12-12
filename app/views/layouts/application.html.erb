@@ -15,10 +15,8 @@
   <div id="header">
     <div class="centerContent">
       <section class="left" id="login">
-        <h1>Login</h1>
+        <h1>Customer</h1>
         <%= render :partial => "sessions/form"  %>
-        <p>Not a user? <strong> <%= link_to "Register", :controller => 'customers', :action => 'new', :class => 'register' %></strong><span class="go_arrow"> &gt; </span></p>
-        <p><strong><a href="#">Forgot password ?</a></strong></p>
       </section><!--End #login-->
       <header class="left" id="pageHeading">
         <hgroup>
@@ -38,44 +36,15 @@
   </div><!--End #header-->
   <div class="centerContent bodyContent">
     <div class="clearBoth" id="subNav">
-      <ul>
-        <li><%= link_to "Home", :controller => 'page', :action => 'home' %><span>Welcome to  Cardboard!</span></li>
-        <li><%=link_to "About", :controller => 'page', :action => 'about' %><span>Who we are</span></li>
-        <li><a href="#">Contact Us</a> <span class="contain">For everything
-you want</span></li>
-        <li><%= link_to "Register", :controller => 'customers', :action => 'new'  %> <span class="contain">Discover
-the advantages</span></li>
-        <li><%=  link_to "Help", :controller => 'page', :action => 'help' %> <span>Got Questions?</span></li>
-        <li><%= link_to "Our Services", :controller => 'page', :action => 'services' %> <span class="contain">What we have
-to offer</span></li>
-      </ul>
+      <!-- Sub Navigation - Home, about etc -->
+      <%= render :partial => "layouts/sub_nav.html.erb" %>
     </div><!--End #subNav-->
     <div class="clearLeft" id="navBar">
-      <nav>
-        <h1>Main Navigation for Products</h1>
-        <ul>
-          <li><%= link_to "Home", :controller => 'page', :action => 'home' %></li>
-          <li><a href="#">Accessories</a></li>
-          <li><a href="#">Frees Time</a></li>
-          <li><a href="product_category.html">Kitchen</a></li>
-          <!--<ul>
-              <li><a href="#">Mugs</a></li>
-              <li><a href="#">Appliances</a></li>
-              <li><a href="#">Pottery</a></li>
-              <li><a href="#">Textiles</a></li>
-              <li><a href="3">Decoration</a></li>
-          </ul>-->
-          <li><a href="#">Books</a></li>
-          <li><a href="#">Electronics</a></li>
-          <li><a href="#">T&ndash;Shirts</a></li>
-          <li><a href="#">Furniture</a></li>
-        </ul>
-      </nav>
+      <!-- Product Category Navigation -->
+      <%= render :partial => "layouts/product_nav.html.erb" %>
       <div class="right" id="search">
-        <form action="#" method="get" name="search" id="search">
-          <input name="search" type="text" id="search_input" placeholder="search">
-          <input name="searchSite" type="submit" id="searchSite" value="go">
-        </form>
+        <!-- search box -->
+       <%= render :partial => "layouts/search.html.erb" %>
       </div>
     </div><!--End #navBar-->
 

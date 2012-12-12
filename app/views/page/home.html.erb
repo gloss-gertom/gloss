@@ -5,101 +5,14 @@
 
 <!--FEATURED LIST-->
 <section class="productList featurList">
-  <header class="featured"><h1 class="catalog">Featured Products <%= yield %></h1></header>
-  <article class="threeAcross">
-
-    <%= image_tag "products/full/kettle.jpg", :width => "298", :height => "139", :alt =>" " %>
-    <div class="a_content"> <p>In: <span class="cat_title">Accessories</span></p>
-      <header><h2 class="item_title">Consectetur</h2></header>
-      <p class="item_desc"> | Lorem ipsum dolor sit amet, adipiscing elit. Quisque at faucibus ligula. - <strong>$19.99</strong></p>
-      <p class="learn_more"><a href="#" title="Item Description">More</a><span class="go_arrow"> &gt; </span></p>
-      <form name="addToCart" class="addToCart" action="">
-        <input type="submit" value="Add To Cart" name="updateCart" class="updateCart" />
-      </form>
-    </div><!--a_content-->
-  </article><!--End threeAcross -->
-
-  <article class="threeAcross">
-
-    <%= image_tag "products/full/jug.jpg", :width => "298", :height => "139", :alt =>" " %>
-    <div class="a_content"> <p>In: <span class="cat_title">Furniture</span></p>
-      <header><h2 class="item_title">Consectetur</h2></header><p class="item_desc"> | Lorem ipsum dolor sit amet, adipiscing elit. Quisque at faucibus ligula. - <strong>$19.99</strong></p>
-      <p class="learn_more"><a href="#" title="Item Description">More</a><span class="go_arrow"> &gt; </span></p>
-      <form name="addToCart" class="addToCart" action="">
-        <input type="submit" value="Add To Cart" name="updateCart" class="updateCart" />
-      </form>
-    </div><!-- a_content -->
-
-  </article><!--End threeAcross 2-->
-
-  <article class="threeAcross end">
-
-    <%= image_tag "products/full/t-shirt.jpg", :width => "298", :height => "139", :alt =>" " %>
-    <div class="a_content"><p>In: <span class="cat_title">T&ndash;Shirts</span></p>
-      <header><h2 class="item_title">Consectetur</h2></header><p class="item_desc"> | Lorem ipsum dolor sit amet, adipiscing elit. Quisque at faucibus ligula. - <strong>$19.99</strong></p>
-      <p class="learn_more"><a href="#" title="Item Description">More</a><span class="go_arrow"> &gt; </span></p>
-      <form name="addToCart" class="addToCart" action="">
-        <input type="submit" value="Add To Cart" name="updateCart" class="updateCart" />
-      </form>
-    </div><!--a_content-->
-  </article><!--End threeAcross 3-->
-
-  <div class="clearLeft"></div>
-  <a href="#" title="More Offers" class="moreOffers">More Offers</a>
+  <%= render :partial => "shared/featured" %>
 </section>
 
 <!--End FEATURED LIST-->
 
 <!--START SPECIALS-->
 <section class="productList">
-  <header class="special">
-    <h1 class="catalog">Special Offer5</h1></header>
-  <article class="fourAcross">
-    <%= image_tag "products/small/cushion.jpg", :width => "218", :height => "138", :alt =>" " %>
-    <div class="a_content">
-      <header><h2>Consectetur | <span class="cat_title">Accessories</span></h2></header>
-      <p>Lorem Ipsum dolor - <strong>$19.99</strong></p>
-      <p class="learn_more"><a href="#" title="Item Description">More</a><span class="go_arrow"> &gt; </span></p>
-      <form name="addToCart" class="addToCart" action="">
-        <input type="submit" value="Add To Cart" name="updateCart" class="updateCart" />
-      </form>
-    </div><!--a_content-->
-  </article><!--End fourAcross 1-->
-  <article class="fourAcross">
-    <%= image_tag "products/small/clock.jpg", :width => "218", :height => "138", :alt =>" " %>
-    <div class="a_content">
-      <header><h2>Consectetur | <span class="cat_title">Accessories</span></h2></header>
-      <p>Lorem Ipsum dolor - <strong>$19.99</strong></p>
-      <p class="learn_more"><a href="#" title="Item Description">More</a><span class="go_arrow"> &gt; </span></p>
-      <form name="addToCart" class="addToCart" action="">
-        <input type="submit" value="Add To Cart" name="updateCart" class="updateCart" />
-      </form>
-    </div><!--a_content-->
-  </article><!--End fourAcross 2-->
-  <article class="fourAcross">
-    <%= image_tag "products/small/furniture.jpg", :width => "218", :height => "138", :alt =>" " %>
-    <div class="a_content">
-      <header><h2>Consectetur | <span class="cat_title">Accessories</span></h2></header>
-      <p>Lorem Ipsum dolor - <strong>$19.99</strong></p>
-      <p class="learn_more"><a href="#" title="Item Description">More</a><span class="go_arrow"> &gt; </span></p>
-      <form name="addToCart" class="addToCart" action="">
-        <input type="submit" value="Add To Cart" name="updateCart" class="updateCart" />
-      </form>
-    </div><!--a_content-->
-  </article><!--End fourAcross 3-->
-  <article class="fourAcross end">
-    <%= image_tag "products/small/blue-shirt.jpg", :width => "218", :height => "138", :alt =>" " %>
-    <div class="a_content">
-      <header> <h2>Consectetur | <span class="cat_title">Accessories</span></h2></header>
-      <p>Lorem Ipsum dolor - <strong>$19.99</strong></p>
-      <p class="learn_more"><a href="#" title="Item Description">More</a><span class="go_arrow"> &gt; </span></p>
-      <form name="addToCart" class="addToCart" action="">
-        <input type="submit" value="Add To Cart" name="updateCart" class="updateCart" />
-      </form>
-    </div><!--a_content-->
-  </article><!--End fourAcross 4-->
-  <div class="clearLeft"></div>
-  <a href="#" title="More Offers" class="specialOffers">More Offers</a>
+ <%= render :partial => "shared/specials" %>
 </section>
 <!--End Special Offers Section-->
 

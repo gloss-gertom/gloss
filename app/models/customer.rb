@@ -11,17 +11,28 @@ class Customer < ActiveRecord::Base
   # Create own attribute to use
   attr_accessor :password
 
+  # Validate username - check that username not already assigned,
+  # min length 5 and max length 12
+  validates :username, :uniqueness => true,
+                       :length => {:within => 5..12}
+
+
   # Validate Password
   validates :password, :confirmation => true,
-                      :length => {:within => 4..15 },
-                      :if => :password_required?
+                       :length => {:within => 4..15 },
+                       :if => :password_required?
+
+  # Validate email - check the email has not already used and
+  #                - in correct format
+  validates :email, :uniqueness => true,
+                    :format => {:with => /^[^@][\w.-]+@[\w.-]+[.][a-z]{2,4}$/i}
 
   # Run encrypt_password before saving record
   before_save :encrypt_password
 
   # Method accepts username and password
   # Check for customer with matching username
-  # Pass password ot authenticated
+  # Pass password to authenticated
   # If both customer and password are confirmed then user is authenticated
   def self.authenticate(username, password)
     customer = find_by_username(username)

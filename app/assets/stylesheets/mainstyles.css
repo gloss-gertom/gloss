@@ -467,8 +467,8 @@ footer {
     display: inline;
 }
 .fourAcross {
-    width: 218px;
-}
+     width: 218px;
+ }
 .threeAcross, .fourAcross {
     background: #fff;
     display: block;
@@ -1095,4 +1095,9 @@ fieldset label {
 #login_form label {
     position: absolute;
     left: -9999px;
+}
+#logOut {
+    text-decoration: underline;;
+    font-size: 120%;
+    padding-left:  12px;
 }
