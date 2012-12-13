@@ -1,14 +1,15 @@
 
         <p>
         	<% if logged_in? %>
-        	<strong>Welcome <%= session[:username] %>
-          		<%= link_to "Log Out", logout_path, :id => 'logOut' %>
-
-
-                <%= link_to("Edit", {:controller => 'customers', :action => 'edit',:id => 'customer:id'},:class => 'edit') %>
-
-
-      		</strong>
+        	<strong>Welcome <%= session[:username] %></strong>
+         </p>
+         <p>
+           <strong>
+             <%= link_to("Account Details", {:controller => 'customers', :action => 'show',:id => 'customer:id'},:class => 'account') %>
+             <%= link_to "Log Out", logout_path, :id => 'logOut' %>
+             <%= link_to("Edit", {:controller => 'customers', :action => 'edit',:id => 'customer:id'},:class => 'edit') %>
+           </strong>
+         </p>
       		<% else %>
 <%= form_tag session_path, :id => 'login_form'  do %>
     <%= label_tag :username %>

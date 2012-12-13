@@ -1,7 +1,7 @@
 class CustomersController < ApplicationController
   # Want a reference to the currently logged in user before we run the edit/update process
   # getting this via the session[:user_id]
-  before_filter :current_customer, :only => [ :edit]
+  before_filter :current_customer, :only => [ :edit, :show]
   def new
     @customer = Customer.new
   end
@@ -28,11 +28,19 @@ class CustomersController < ApplicationController
     # Update the customer
     if @customer.update_attributes(params[:customer])
       #TODO if successful, redirect to the show action
-      redirect_to page_home_path, :notice => "Account Updated"
+      redirect_to(:action => 'show', :id =>@customer.id)
+      #redirect_to page_home_path, :notice => "Account Updated"
     else
       # if update fails, re-display the form so customer can fix problem
       render('edit')
     end
+  end
+
+  def show
+    @customer = Customer.find_by_id(@current_customer)
+    @first_name = @customer.first_name
+    @last_name = @customer.last_name
+    @name = "#{@first_name}  #{@last_name} "
   end
 
   def delete
