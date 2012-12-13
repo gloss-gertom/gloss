@@ -1,4 +1,7 @@
 class CustomersController < ApplicationController
+  # Want a reference to the currently logged in user before we run the edit/update process
+  # getting this via the session[:user_id]
+  before_filter :current_customer, :only => [ :edit]
   def new
     @customer = Customer.new
   end
@@ -14,9 +17,22 @@ class CustomersController < ApplicationController
   end
 
   def edit
+   # Find the currently logged in user by its id, use the returned data
+   # populate the edit form fields
+     @customer = Customer.find_by_id(@current_customer)
   end
 
   def update
+    # Find customer object using edit form parameters
+    @customer = Customer.find_by_id(params[:id])
+    # Update the customer
+    if @customer.update_attributes(params[:customer])
+      #TODO if successful, redirect to the show action
+      redirect_to page_home_path, :notice => "Account Updated"
+    else
+      # if update fails, re-display the form so customer can fix problem
+      render('edit')
+    end
   end
 
   def delete

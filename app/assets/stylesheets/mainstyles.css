@@ -238,7 +238,7 @@ dd {
 }
 #pageHeading {
     display: inline;
-    width: 340px;
+    width: 325px;
     margin-right: 80px;
     overflow: hidden;
 }
@@ -467,8 +467,8 @@ footer {
     display: inline;
 }
 .fourAcross {
-    width: 218px;
-}
+     width: 218px;
+ }
 .threeAcross, .fourAcross {
     background: #fff;
     display: block;
@@ -1075,7 +1075,7 @@ fieldset label {
     width: 6em;
     cursor: pointer;
 }
-#submit input[value="Register"]     {
+#submit input[value="Register"], #submit input[value="Update"]     {
     width: 200px;
     height: 50px;
     border: 1px solid #989898;
@@ -1091,4 +1091,25 @@ fieldset label {
     text-shadow: 1px 1px 1px #666;
     margin-top: 12px;
     margin-left: 22px;
+}
+#login_form label {
+    position: absolute;
+    left: -9999px;
+}
+#logOut {
+    text-decoration: underline;;
+    font-size: 110%;
+    padding-left:  12px;
+}
+#welcomeUser {
+    border: 2px solid #999;
+    background-color: #eee;
+    clear: both;
+    margin-bottom: 12px;
+    width: 500px;
+    height:  100%;
+    padding: 10px;
+}
+.edit {
+    padding-left: 6px;
 }

@@ -1,0 +1,91 @@
+<div id="breadcrumbs">
+  <ul>
+    <li><a href="#">Home &gt;&gt;</a></li>
+    <li><a href="#">Kitchen &gt;&gt;</a></li>
+    <li><a href="#">Pottery &gt;&gt;</a></li>
+    <li><a href="#">Haiku</a></li>
+  </ul>
+</div><!--end breadcrumbs-->
+
+<section class="product">
+  <header>
+    <hgroup><h1><%= @product.name %></h1><h2><%= @product.description %></h2>
+
+    </hgroup>
+  </header>
+  <div id="backToList">
+    <a href="#" title="Back To List">Back To List</a>
+  </div><!--end backToList-->
+  <div id="productItem">
+    <%= image_tag(@product.image_url, :width => "457", :height => "308", :class=> "left") %>
+    <p id="price"><%= number_to_currency(@product.unit_price, :unit => '&euro;') %></p>
+    <p id="itemId">ID:#<%= @product.id %></p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam erat ante, ornare ut sollicitudin ut, scelerisque sed neque. </p>
+    <p>Vestibulum vitae felis eget lacus euismod elementum ac vitae dolor. Nulla velit eros, bibendum id molestie ac, pretium non arcu.</p>
+
+    <form action="<%= line_items_path(product_id: @product.id) %>" method="post" name="product_choice" id="details">
+      <!-- This section to be replaced by form element for choosing a colour -->
+      <!--<img src="images/choose.jpg" width="212" height="23"> -->
+      <!--end replacement area -->
+      <input type="text" title="Update Quantity In Cart" class="quantity" size="4" maxlength="4" name="quantity" value="1">
+      <input name="updateCart" type="submit" id="updateCart" title="Add To Cart" value="Add To Cart">
+    </form>
+    <%= button_to 'Add to Cart', line_items_path(product_id: @product.id), :class => "left" %>
+    <p class="share">Share</p>
+  </div><!--end productItem-->
+</section><!--end Product section-->
+<div class="clearLeft"></div>
+<div id="nextPrev">
+  <p><span class="prev"><a href="#" title="Prev Product">previous</a></span><span class="next"><a href="#" title="Next Product">next</a></span></p>
+</div><!--end nextPrev-->
+<div class="clearBoth"></div>
+<section class="productList">
+  <header class="special">
+    <h1 class="catalog">Similar Items</h1></header>
+  <article class="fourAcross">
+    <img name="item" src="images/products/small/blue-shirt.jpg" width="218" height="138" alt=" " style="background-color: #999999">
+    <div class="a_content">
+      <header><h2>Consectetur | <span class="cat_title">Accessories</span></h2></header>
+      <p>Lorem Ipsum dolor - <strong>$19.99</strong></p>
+      <p class="learn_more"><a href="#" title="Item Description">More</a><span class="go_arrow"> &gt; </span></p>
+      <form name="addToCart" class="addToCart" action="">
+        <input type="submit" value="Add To Cart" name="updateCart" class="updateCart" />
+      </form>
+    </div><!--a_content-->
+  </article><!--End fourAcross 1-->
+  <article class="fourAcross">
+    <img name="item" src="images/products/small/clock.jpg" width="218" height="139" alt=" " style="background-color: #999999">
+    <div class="a_content">
+      <header><h2>Consectetur | <span class="cat_title">Accessories</span></h2></header>
+      <p>Lorem Ipsum dolor - <strong>$19.99</strong></p>
+      <p class="learn_more"><a href="#" title="Item Description">More</a><span class="go_arrow"> &gt; </span></p>
+      <form name="addToCart" class="addToCart" action="">
+        <input type="submit" value="Add To Cart" name="updateCart" class="updateCart" />
+      </form>
+    </div><!--a_content-->
+  </article><!--End fourAcross 2-->
+  <article class="fourAcross">
+    <img name="item" src="images/products/small/red_shirt.jpg" width="218" height="139" alt=" " style="background-color: #999999">
+    <div class="a_content">
+      <header><h2>Consectetur | <span class="cat_title">Accessories</span></h2></header>
+      <p>Lorem Ipsum dolor - <strong>$19.99</strong></p>
+      <p class="learn_more"><a href="#" title="Item Description">More</a><span class="go_arrow"> &gt; </span></p>
+      <form name="addToCart" class="addToCart" action="">
+        <input type="submit" value="Add To Cart" name="updateCart" class="updateCart" />
+      </form>
+    </div><!--a_content-->
+  </article><!--End fourAcross 3-->
+  <article class="fourAcross end">
+    <img name="item" src="images/products/small/bottle.jpg" width="218" height="138" alt=" " style="background-color: #999999">
+    <div class="a_content">
+      <header> <h2>Consectetur | <span class="cat_title">Accessories</span></h2></header>
+      <p>Lorem Ipsum dolor - <strong>$19.99</strong></p>
+      <p class="learn_more"><a href="#" title="Item Description">More</a><span class="go_arrow"> &gt; </span></p>
+      <form name="addToCart" class="addToCart" action="">
+        <input type="submit" value="Add To Cart" name="updateCart" class="updateCart" />
+      </form>
+    </div><!--a_content-->
+  </article><!--End fourAcross 4-->
+  <div class="clearLeft"></div>
+  <a href="#" title="More Offers" class="specialOffers">More Offers</a>
+</section><!--End Similar Items Section-->

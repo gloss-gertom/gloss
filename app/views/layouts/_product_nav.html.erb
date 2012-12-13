@@ -1,0 +1,10 @@
+ <nav>
+        <h1>Main Navigation for Products</h1>
+        <ul>
+          <li><%= link_to "Home", :controller => 'page', :action => 'home' %></li>
+          <li><%= link_to "Audio", :controller => 'products', :action => 'index', :category_name => "Audio" %></li>
+          <li><%= link_to "TV", :controller => 'products', :action => 'index', :category_name => "TV" %></li>
+          <li><%= link_to "PC", :controller => 'products', :action => 'index', :category_name => "PC" %></li>
+          <li><%= link_to "Furniture", :controller => 'products', :action => 'index', :category_name => "Furniture" %></li>
+        </ul>
+ </nav>
