@@ -1,7 +1,7 @@
 class CustomersController < ApplicationController
   # Want a reference to the currently logged in user before we run the edit/update process
   # getting this via the session[:user_id]
-  before_filter :current_customer, :only => [ :edit, :show]
+  before_filter :current_customer, :only => [ :edit, :show, :update]
   def new
     @customer = Customer.new
   end
@@ -18,7 +18,7 @@ class CustomersController < ApplicationController
 
   def edit
 
-    @customer = Customer.find(params[:id])
+    @customer = Customer.find_by_id(@current_customer)
   end
 
 
