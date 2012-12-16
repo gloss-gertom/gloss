@@ -1,3 +1,4 @@
+<<<<<<< HEAD
  <p>
     <% if logged_in? %>
       <strong>Welcome <%= session[:username] %>
@@ -11,6 +12,28 @@
       <%= password_field_tag :password, '*****', :onfocus => 'myFocus(this);', :onblur => 'myBlur(this)' %>
       <%=  submit_tag 'login', :id => 'login_submit' %>
     <% end %>
+=======
+
+        <p>
+        	<% if logged_in? %>
+        	<strong>Welcome <%= session[:username] %></strong>
+         </p>
+         <p>
+           <strong>
+             <%= link_to("Account Details", {:controller => 'customers', :action => 'show',:id => 'customer:id'},:class => 'account') %>
+             <%= link_to "Log Out", logout_path, :id => 'logOut' %>
+             <%= link_to("Edit", {:controller => 'customers', :action => 'edit',:id => 'customer:id'},:class => 'edit') %>
+           </strong>
+         </p>
+      		<% else %>
+<%= form_tag session_path, :id => 'login_form'  do %>
+    <%= label_tag :username %>
+    <%= text_field_tag :username, 'username', :onfocus => 'myFocus(this);', :onblur => 'myBlur(this)' %>
+    <%= label_tag :password %>         ,
+    <%= password_field_tag :password, '*****', :onfocus => 'myFocus(this);', :onblur => 'myBlur(this)' %>
+    <%=  submit_tag 'login', :id => 'login_submit' %>
+<% end %>
+>>>>>>> origin/master
  <p>Not registered? <strong> <%= link_to "Register", :controller => 'customers', :action => 'new', :class => 'register' %></strong><span class="go_arrow"> &gt; </span></p>
 
 
