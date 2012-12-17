@@ -1,5 +1,6 @@
 class CustomersController < ApplicationController
   def new
+    @cart = current_cart
     @customer = Customer.new
   end
 
