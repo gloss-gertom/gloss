@@ -1,0 +1,52 @@
+<h1>Account Details for <%= @name %></h1>
+<table id="summary" summary = "Customer Details">
+  <tr>
+    <th>Username:</th>
+    <td><%= @customer.username %></td>
+  </tr>
+  <tr>
+    <th>First Name:</th>
+    <td><%= @customer.first_name %></td>
+  </tr>
+  <tr>
+    <th>Last Name:</th>
+    <td><%= @customer.last_name %></td>
+  </tr>
+  <tr>
+    <th>Address 1:</th>
+    <td><%= @customer.address_1 %></td>
+  </tr>
+  <tr>
+    <th>Address 2:</th>
+    <td><%= @customer.address_2 %></td>
+  </tr>
+  <tr>
+    <th>Address 3:</th>
+    <td><%= @customer.address_3 %></td>
+  </tr>
+  <tr>
+    <th>City:</th>
+    <td><%= @customer.city %></td>
+  </tr>
+  <tr>
+    <th>Postcode:</th>
+    <td><%= @customer.postcode %></td>
+  </tr>
+  <tr>
+    <th>County:</th>
+    <td><%= @customer.county %></td>
+  </tr>
+  <tr>
+    <th>Country:</th>
+    <td><%= @customer.country %></td>
+  </tr>
+  <tr>
+    <th>Tel no.:</th>
+    <td><%= @customer.tel_no %></td>
+  </tr>
+  <tr>
+    <th>Email:</th>
+    <td><%= @customer.email %></td>
+  </tr>
+</table>
+<%= link_to("Edit", {:controller => 'customers', :action => 'edit',:id => 'customer:id'},:class => 'editDetails') %>

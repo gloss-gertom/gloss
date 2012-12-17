@@ -14,12 +14,12 @@ class Customer < ActiveRecord::Base
   # Validate username - check that username not already assigned,
   # min length 5 and max length 12
   validates :username, :uniqueness => true,
-                       :length => {:within => 5..12}
+                      :length => {:within => 5..12}
 
 
   # Validate Password
   validates :password, :confirmation => true,
-                       :length => {:within => 4..15 },
+                      :length => {:within => 4..15 },
                        :if => :password_required?
 
   # Validate email - check the email has not already used and
