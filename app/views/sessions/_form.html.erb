@@ -1,4 +1,3 @@
-
         <p>
         	<% if logged_in? %>
         	<strong>Welcome <%= session[:username] %></strong>
@@ -18,7 +17,12 @@
     <%= password_field_tag :password, '*****', :onfocus => 'myFocus(this);', :onblur => 'myBlur(this)' %>
     <%=  submit_tag 'login', :id => 'login_submit' %>
 <% end %>
- <p>Not registered? <strong> <%= link_to "Register", :controller => 'customers', :action => 'new', :class => 'register' %></strong><span class="go_arrow"> &gt; </span></p>
+
+ <p>Not registered? <strong>
+   <%= link_to "Register", :controller => 'customers', :action => 'new', :class => 'register' %>
+ </strong><span class="go_arrow"> &gt; </span>
+
+
 
       		<% end %>
  		</p>

@@ -1,0 +1,8 @@
+Welcome to Gloss, <%= @customer.first_name %>
+
+You have successfully registered to Gloss,
+your username is: <%= @customer.username %>.
+
+To login to the site, just follow the link <%= @url %>.
+
+Thanks for registering and enjoy the site

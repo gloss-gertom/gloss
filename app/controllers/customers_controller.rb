@@ -1,7 +1,7 @@
 class CustomersController < ApplicationController
   # Want a reference to the currently logged in user before we run the edit/update process
   # getting this via the session[:user_id]
-  before_filter :current_customer, :only => [ :edit, :show]
+  before_filter :current_customer, :only => [ :edit, :show, :update]
   def new
     @customer = Customer.new
   end
@@ -9,6 +9,8 @@ class CustomersController < ApplicationController
   def create
     @customer = Customer.new(params[:customer])
     if @customer.save
+      # Tell the CustomerMailer to send a welcome Email after save
+      CustomerMailer.welcome_email(@customer).deliver
       redirect_to page_home_path, :notice => "Account Created"
     else
       #TODO Need to re-think what and where notice is displayed
@@ -17,10 +19,10 @@ class CustomersController < ApplicationController
   end
 
   def edit
-   # Find the currently logged in user by its id, use the returned data
-   # populate the edit form fields
-     @customer = Customer.find_by_id(@current_customer)
+
+    @customer = Customer.find_by_id(@current_customer)
   end
+
 
   def update
     # Find customer object using edit form parameters
@@ -41,6 +43,7 @@ class CustomersController < ApplicationController
     @first_name = @customer.first_name
     @last_name = @customer.last_name
     @name = "#{@first_name}  #{@last_name} "
+
   end
 
   def delete
