@@ -1,7 +1,11 @@
 DemoGloss::Application.routes.draw do
+  get "line_items/edit"
+
   resources :line_items
 
   resources :carts
+
+
 
   get "products/show"
 

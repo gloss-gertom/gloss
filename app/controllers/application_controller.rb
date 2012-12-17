@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
 
   protected
 
+
   # Returns the currently logged in customer or nil if there isn't one
   def current_customer
   	return unless session[:user_id]
@@ -31,6 +32,7 @@ class ApplicationController < ActionController::Base
   	return false
   end
 
+
   private
 
   def current_cart
@@ -40,4 +42,8 @@ class ApplicationController < ActionController::Base
     session[:cart_id] = cart.id
     cart
   end
+  helper_method :current_cart
+
+
+
 end

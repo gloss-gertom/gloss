@@ -1,0 +1,10 @@
+
+<h1>Cart</h1>
+<div>
+ <p class="cart_prod">Total Items:&nbsp<%= cart.total_items %></p>
+ <p class="cart_total left">Total Price:&nbsp<%= number_to_currency(cart.total_price, :unit => '&euro;') %></p>
+ <p><%= link_to 'View Cart', cart_path(session[:cart_id]) %></p>
+
+</div>
+
+

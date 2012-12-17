@@ -1,5 +1,6 @@
 class PageController < ApplicationController
   def home
+    @cart = current_cart
   end
 
   def about

@@ -23,14 +23,15 @@
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam erat ante, ornare ut sollicitudin ut, scelerisque sed neque. </p>
     <p>Vestibulum vitae felis eget lacus euismod elementum ac vitae dolor. Nulla velit eros, bibendum id molestie ac, pretium non arcu.</p>
 
-    <form action="<%= line_items_path(product_id: @product.id) %>" method="post" name="product_choice" id="details">
+    <%=  form_tag line_items_path(product_id: @product.id), :method => "post" do %>
+    <!--<form action="" method="post" name="product_choice" id="details"> --->
       <!-- This section to be replaced by form element for choosing a colour -->
       <!--<img src="images/choose.jpg" width="212" height="23"> -->
       <!--end replacement area -->
       <input type="text" title="Update Quantity In Cart" class="quantity" size="4" maxlength="4" name="quantity" value="1">
       <input name="updateCart" type="submit" id="updateCart" title="Add To Cart" value="Add To Cart">
-    </form>
-    <%= button_to 'Add to Cart', line_items_path(product_id: @product.id), :class => "left" %>
+    <% end %>
+
     <p class="share">Share</p>
   </div><!--end productItem-->
 </section><!--end Product section-->

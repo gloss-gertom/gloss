@@ -1,0 +1,25 @@
+
+    <div class="productDetails">
+      <div class="details left">
+        <%= image_tag(line_item.product.image_url, :width => "130", :height => "80", :class=> "left") %>
+        <div class="detailsDesc"><h2><%= line_item.product.name %></h2>
+          <p>ID:#<%= line_item.product.id %></p>
+          <p><%= line_item.product.description %></p>
+        </div>
+      </div><!-- end details -->
+      <div class="quantity">
+        <p>&nbsp</p>
+
+        <%=  form_for(line_item) do |f| %>
+            <%= f.label :quantity %>
+            <%= f.text_field :quantity, :size=>4 %>
+            <%= f.submit "Update" %>
+            <%= link_to 'Delete', line_item, method: :delete, data: { confirm: 'DELETE requested: Are you sure?' } %>
+        <% end %>
+
+        <p class="price"><%= number_to_currency(line_item.product.unit_price, :unit => '&euro;') %></p>
+      </div><!-- end quantity -->
+    </div><!-- end product details -->
+
+
+
