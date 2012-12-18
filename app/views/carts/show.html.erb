@@ -14,7 +14,7 @@
     <div id="backToList">
       <a href="#" title="Continue Shopping">Continue Shopping</a>
     </div><!--end backToList-->
-    <div>Total Price: <%= number_to_currency(@cart.total_price, :unit => '&euro;') %></div>
+    <div>Summary- Unique Items:<%= @cart.total_items %>&nbsp;&nbsp;&nbsp;Total Quantity:<%= @cart.total_quantity %>&nbsp;&nbsp;&nbsp;Total Price: <%= number_to_currency(@cart.total_price, :unit => '&euro;') %></div>
 
     <%= render(@cart.line_items) %>
 
