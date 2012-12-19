@@ -1043,10 +1043,13 @@ ol.pagination li.selected {
 #label .label_content p a {
     color: #2a95a1;
 }
-#registration {
+#registration, #contact {
     font-size: 26px;
     text-align: center;
     line-height: 42px;
+}
+#contact {
+    text-align: left;
 }
 form div {
     clear: left;
@@ -1134,4 +1137,13 @@ table#summary th {
 table#summary td {
     font-size: 130%;
 padding-bottom: 12px;
+}
+#cart div .button_to div {
+    position: relative;
+    top: -27px;
+    left:  230px;
+    z-index: 100;
+}
+#orderDetails {
+    float: left;
 }

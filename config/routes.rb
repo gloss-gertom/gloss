@@ -5,7 +5,7 @@ DemoGloss::Application.routes.draw do
 
   resources :carts
 
-
+  resources :orders
 
   get "products/show"
 
