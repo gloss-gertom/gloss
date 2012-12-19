@@ -18,4 +18,13 @@ class Product < ActiveRecord::Base
     end
   end
 
+  def self.search(search_query)
+    
+    if search_query
+      find(:all,:conditions => ['description LIKE ?', "%#{search_query}%"])
+    else
+      redirect_to root_path, notice: 'Search Results: No items found.'
+    end
+
+  end
 end

@@ -1,4 +1,11 @@
- <form action="#" method="get" name="search" id="search">
+
+<%= form_tag products_path, :category_name => "Search Results", :method => 'get' do %>
+	<p>
+		<%= text_field_tag :search_query, params[:search_query] %>
+		<%= submit_tag "Search", :description => nil %>
+	</p>
+<% end %>
+<!-- <form action="#" method="get" name="search" id="search">
           <input name="search" type="text" id="search_input" placeholder="search">
           <input name="searchSite" type="submit" id="searchSite" value="go">
- </form>
+ </form> -->

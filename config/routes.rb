@@ -5,8 +5,6 @@ DemoGloss::Application.routes.draw do
 
   resources :carts
 
-
-
   get "products/show"
 
   get "products/index"
