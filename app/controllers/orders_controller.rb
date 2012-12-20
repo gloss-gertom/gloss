@@ -28,7 +28,9 @@ class OrdersController < ApplicationController
       # If the order succeeds, delete the cart from the session
       Cart.destroy(session[:cart_id])
       session[:cart_id] = nil
-      redirect_to page_home_path, :notice => "Thank you for your Order"
+      #OrderDetails.received(@order).deliver
+     # redirect_to page_home_path, :notice => "Thank you for your Order"
+      render action: "thank_you"
     else
       # if the save fails for some reason
       # redisplay the checkout form with the current cart
@@ -36,4 +38,11 @@ class OrdersController < ApplicationController
       render action: "new"
     end
   end
+
+  def thank_you
+    @page_title = "Displaying order ##{params[:id]}"
+    @order = Order.find(params[:id])
+
+  end
+
 end
