@@ -1,0 +1,14 @@
+<h3>Gloss Order Shipped</h3>
+<p>This is a confirmation email to confirm that we've shipped your
+recent order</p>
+<table>
+  <tr>
+    <th colspan="2">Qty</th>
+    <th>Description></th>
+  </tr>
+  <tr>
+    <td><%=  line_item.quantity %>&times;</td>
+    <td><%= line_item.product.title %></td>
+    <td class = "price"><%= number_to_currency(line_item.total_price) %></td>
+  </tr>
+</table>

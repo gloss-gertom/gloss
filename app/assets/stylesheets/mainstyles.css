@@ -223,7 +223,8 @@ dd {
 }
 #header {
     border-bottom: 2px solid #807f7d;
-    height: 140px;
+    height: 152px;
+    min-height: 152px;;
 }
 .bodyContent {
     background:url(/assets/header_shadow.png) top center no-repeat;
@@ -362,8 +363,8 @@ p .go_arrow {
     width: 66px;
     text-indent: -9999px;
     position: relative;
-    top: 6px;
-    left: 156px;
+    top: -26px;
+    left: 230px;
 }
 /* ^5b ------  Sub Nav ------  */
 #subNav ul {
@@ -1043,7 +1044,7 @@ ol.pagination li.selected {
 #label .label_content p a {
     color: #2a95a1;
 }
-#registration, #contact {
+#registration, #contact, #confirmOrder {
     font-size: 26px;
     text-align: center;
     line-height: 42px;
@@ -1054,7 +1055,7 @@ ol.pagination li.selected {
 form div {
     clear: left;
 }
-fieldset {
+fieldset, #confirmation {
     border: 2px solid #999;
     background-color: #eee;
     margin-bottom: 12px;
@@ -1146,4 +1147,22 @@ padding-bottom: 12px;
 }
 #orderDetails {
     float: left;
+}
+#header p.cart_prod {
+    text-align: right;
+    color:  #CBCCC8;
+}
+#header p.cart_total {
+    position:  relative;
+    left: 126px;
+    color: #CBCCC8;
+}
+#notice {
+    border: 2px solid #999;
+    background-color: #eee;
+    font-size:  120%;
+    margin: 10px 12px 12px 12px;
+    float:  left;
+    width: 96%;
+    padding: 10px;
 }
