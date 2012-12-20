@@ -1,5 +1,13 @@
 class Cart < ActiveRecord::Base
+  #before_filter :authorise
+
   has_many :line_items, dependent: :destroy
+
+  def authorise
+      unless Customer.find_by_id(session[:user_id])
+        redirect_to login_url, notice: "Please Log In:-"        
+      end    
+  end
 
   def add_product(product_id, quantity)
     current_item = line_items.find_by_product_id(product_id)

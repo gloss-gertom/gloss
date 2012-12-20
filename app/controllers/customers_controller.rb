@@ -3,7 +3,6 @@ class CustomersController < ApplicationController
   # getting this via the session[:user_id]
   before_filter :current_customer, :only => [ :edit, :show, :update]
   def new
-    @cart = current_cart
     @customer = Customer.new
   end
 
@@ -20,7 +19,6 @@ class CustomersController < ApplicationController
   end
 
   def edit
-
     @customer = Customer.find_by_id(@current_customer)
   end
 

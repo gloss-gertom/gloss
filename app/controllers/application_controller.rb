@@ -1,8 +1,12 @@
 class ApplicationController < ActionController::Base
+  before_filter :initalise_nullcart
   protect_from_forgery
 
   protected
 
+  def initalise_nullcart
+      @cart = current_cart  
+  end
 
   # Returns the currently logged in customer or nil if there isn't one
   def current_customer

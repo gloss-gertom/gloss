@@ -1,8 +1,7 @@
 class CartsController < InheritedResources::Base
 
   def index
-    @cart = current_cart
-    redirect_to root_path, notice: 'Cart EMPTIED'
+      redirect_to root_path, notice: 'Cart EMPTIED'
   end
 
   def show

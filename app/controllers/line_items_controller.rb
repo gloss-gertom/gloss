@@ -1,6 +1,6 @@
 class LineItemsController < InheritedResources::Base
   def create
-    @cart = current_cart
+    #@cart = current_cart
 
     product = Product.find(params[:product_id])
     quantity = params[:quantity].to_i
@@ -25,12 +25,10 @@ class LineItemsController < InheritedResources::Base
   end
 
   def index
-    @cart = current_cart
     redirect_to cart_path(session[:cart_id]), notice: 'Line item was successfully DELETED.'
   end
 
   def show
-    @cart = current_cart
     redirect_to cart_path(session[:cart_id]), notice: 'Line item was successfully UPDATED.'
   end
  # def update
