@@ -9,7 +9,4 @@ class LineItem < ActiveRecord::Base
     product.unit_price * quantity
   end
 
-  def total_items
-
-  end
 end

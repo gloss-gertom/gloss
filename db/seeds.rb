@@ -10,6 +10,7 @@ Category.create({category_name: "Audio"})
 Category.create({category_name: "Furniture"})
 Category.create({category_name: "PC"})
 Category.create({category_name: "TV"})
+Category.create({category_name: "Search Results"})
 
 UnitType.destroy_all
 UnitType.create({unit_type: "Each"})

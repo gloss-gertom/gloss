@@ -1,7 +1,6 @@
 class PageController < ApplicationController
   def home
     @cart = current_cart
-   #$catname = ""
   end
 
   def about
