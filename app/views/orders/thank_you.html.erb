@@ -6,5 +6,8 @@
 <p><strong>Deliver to:</strong></p>
 <p><%= @order.address_1 %>, <%= @order.address_2 %>, <%= @order.address_3 %>, <%= @order.city %></p>
 <p><%= @order.postcode %>, <%= @order.country %></p>
-
+<p><strong>Items:</strong></p>
+<% @order.line_items.each do |l| %>
+<p><%= "#{l.product.name} :  #{l.product.description} x #{l.quantity} @ #{l.unit_price} Euro each" %></p>
+<% end %> 
 </div>

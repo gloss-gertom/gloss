@@ -44,7 +44,7 @@ class OrdersController < ApplicationController
   def thank_you
     @page_title = "Displaying order ##{params[:id]}"
     @order = Order.find(params[:id])
-   
+    @line_item = Line_item.find(params[:id])
 
   end
 
