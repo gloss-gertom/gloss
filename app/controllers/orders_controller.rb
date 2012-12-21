@@ -30,7 +30,7 @@ class OrdersController < ApplicationController
       session[:cart_id] = nil
       # Instantiate new cart, required for Cart partial to render without error
       @cart = current_cart
-      #OrderDetails.received(@order).deliver
+      OrderDetails.received(@order).deliver
      # redirect_to page_home_path, :notice => "Thank you for your Order"
       render action: "thank_you"
     else
