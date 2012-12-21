@@ -22,11 +22,13 @@ class CartsController < InheritedResources::Base
 
   protected
 
-    def authorise_customer
+  def authorise_customer
       unless Customer.find_by_id(session[:user_id])
-        redirect_to login_url, notice: "Please log in to purchase"
+      # keep customer/visitor on the product page
+      # request them to log in in order to make a purchase
+      redirect_to :back, notice: "Please log in to purchase"
       end
-    end
+  end
 
 
 end
