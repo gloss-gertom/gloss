@@ -28,6 +28,8 @@ class OrdersController < ApplicationController
       # If the order succeeds, delete the cart from the session
       Cart.destroy(session[:cart_id])
       session[:cart_id] = nil
+      # Instantiate new cart, required for Cart partial to render without error
+      @cart = current_cart
       #OrderDetails.received(@order).deliver
      # redirect_to page_home_path, :notice => "Thank you for your Order"
       render action: "thank_you"
@@ -42,6 +44,7 @@ class OrdersController < ApplicationController
   def thank_you
     @page_title = "Displaying order ##{params[:id]}"
     @order = Order.find(params[:id])
+   
 
   end
 
