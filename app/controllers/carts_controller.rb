@@ -1,4 +1,6 @@
 class CartsController < InheritedResources::Base
+  before_filter :authorise_customer
+  protect_from_forgery
 
   def index
       redirect_to root_path, notice: 'Cart EMPTIED'
@@ -17,6 +19,14 @@ class CartsController < InheritedResources::Base
       end
     end
   end
+
+  protected
+
+    def authorise_customer
+      unless Customer.find_by_id(session[:user_id])
+        redirect_to login_url, notice: "Please log in to purchase"
+      end
+    end
 
 
 end

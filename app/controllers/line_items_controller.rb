@@ -4,7 +4,6 @@ class LineItemsController < InheritedResources::Base
 
     product = Product.find(params[:product_id])
     quantity = params[:quantity].to_i
-    #unit_price = product.unit_price
 
     @line_item = @cart.add_product(product.id,quantity)
     @line_item.unit_price = product.unit_price
