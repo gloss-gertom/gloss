@@ -1,7 +1,10 @@
 # Load the Digest Library for encrypting password
 require 'digest'
 class Customer < ActiveRecord::Base
-   attr_accessible :username, :hashed_password, :first_name,
+  #
+  has_many :orders
+
+  attr_accessible :username, :hashed_password, :first_name,
                    :last_name, :address_1, :address_2,
                    :address_3, :city, :postcode,
                    :county, :country, :tel_no, :email, :password
@@ -24,7 +27,9 @@ class Customer < ActiveRecord::Base
 
   # Validate email - check the email has not already used and
   #                - in correct format
-  validates :email, :uniqueness => true,
+  validates :email, :presence => true,
+                    #TODO removed uniqueness for testing purposes
+                    #:uniqueness => true,
                     :format => {:with => /^[^@][\w.-]+@[\w.-]+[.][a-z]{2,4}$/i}
 
   # Run encrypt_password before saving record

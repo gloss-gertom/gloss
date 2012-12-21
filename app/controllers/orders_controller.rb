@@ -1,5 +1,8 @@
 # Class based on orders controller created in Agile web development   C.12
 class OrdersController < ApplicationController
+  # Going to need access to current customer information
+  # As we want to pre-populate order form
+  before_filter :current_customer, :only => [ :new, :create]
 
   def new
     @cart = current_cart
@@ -10,12 +13,12 @@ class OrdersController < ApplicationController
       redirect_to page_home_path, notice: "Your cart is empty"
       return
     end
-
     @order = Order.new
-
+    @customer_name = Customer.find_by_id(@current_customer)
   end
 
   def create
+    @customer_name = Customer.find_by_id(@current_customer)
     # Create a new order object, collect all the form data related
     # to order
     @order = Order.new(params[:order])
@@ -31,7 +34,6 @@ class OrdersController < ApplicationController
       # Instantiate new cart, required for Cart partial to render without error
       @cart = current_cart
       OrderDetails.received(@order).deliver
-     # redirect_to page_home_path, :notice => "Thank you for your Order"
       render action: "thank_you"
     else
       # if the save fails for some reason

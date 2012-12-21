@@ -2,62 +2,62 @@
     <% if @order.errors.any? %>
         <div id="error_order">
           <h2><%= pluralize(@order.errors.count, "error") %>
-          prohibited this order from being saved:</h2>
+            prohibited this order from being saved:</h2>
           <ul>
             <% @order.errors.full_messages.each do |msg| %>
-            <li><%=  msg %></li>
+                <li><%=  msg %></li>
             <% end %>
           </ul>
         </div>
     <% end %>
     <div>
       <%=  f.label :username %>
-      <%=  f.text_field :username %>
+      <%=  f.text_field :username, :value => @customer_name.username %>
     </div>
     <div>
       <%= f.label :email %>
-      <%= f.email_field :email %>
+      <%= f.email_field :email, :value => @customer_name.email %>
     </div>
     <div>
       <%= f.label :tel_no %>
-      <%= f.text_field :tel_no %>
+      <%= f.text_field :tel_no, :value => @customer_name.tel_no %>
     </div>
 
     <div>
       <%= f.label :first_name %>
-      <%= f.text_field :first_name %>
+      <%= f.text_field :first_name, :value => @customer_name.first_name %>
     </div>
     <div>
       <%= f.label :last_name %>
-      <%= f.text_field :last_name %>
+      <%= f.text_field :last_name, :value => @customer_name.last_name %>
     </div>
     <div>
       <%= f.label :address_1 %>
-      <%= f.text_field :address_1 %>
+      <%= f.text_field :address_1, :value => @customer_name.address_1 %>
     </div>
     <div>
       <%= f.label :address_2 %>
-      <%= f.text_field :address_2 %>
+      <%= f.text_field :address_2, :value => @customer_name.address_2 %>
     </div>
     <div>
       <%= f.label :address_3 %>
-      <%= f.text_field :address_3 %>
+      <%= f.text_field :address_3, :value => @customer_name.address_3 %>
     </div>
     <div>
       <%= f.label :city %>
-      <%= f.text_field :city %>
+      <%= f.text_field :city, :value => @customer_name.city %>
     </div>
     <div>
       <%= f.label :postcode %>
-      <%= f.text_field :postcode %>
+      <%= f.text_field :postcode, :value => @customer_name.postcode %>
     </div>
     <div>
       <%= f.label :county %>
-      <%= f.text_field :county %>
+      <%= f.text_field :county, :value => @customer_name.county %>
     </div>
     <div>
       <%= f.label :country %>
-      <%= f.text_field :country %>
+      <%= f.text_field :country, :value => @customer_name.country %>
     </div>
 
 
