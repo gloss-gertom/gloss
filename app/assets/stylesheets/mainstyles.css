@@ -474,7 +474,7 @@ footer {
     background: #fff;
     display: block;
     float: left;
-    margin-right: 20px;
+    margin-right: 13px;
     padding: 1px;
     padding-bottom: 9px;
     overflow: hidden;
@@ -485,6 +485,7 @@ footer {
 .a_content {
     padding-left: 10px;
     padding-top: 10px;
+    position: relative;
 }
 .a_content p {
     margin-bottom: 0.2em;
@@ -662,6 +663,7 @@ a#call {
 }
 .product, .cartList, .services, .help, .productList {
     float: left;
+    margin-left: 3px;
     position: relative;
     width: 100%;
 }
@@ -858,8 +860,9 @@ aside blockquote {
 }
 .updateCart {
     margin-left: 10px;
-    position: relative;
-    top: -3px;
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
 }
 .detailsDesc h2 {
     font-size: 1.2em;
