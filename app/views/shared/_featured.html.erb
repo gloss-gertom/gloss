@@ -1,7 +1,7 @@
 <header class="featured"><h1 class="catalog">Featured Products <%= yield %></h1></header>
-<% @features.each do |feature| %>
-
-    <article class="threeAcross">
+<% @offers.each do |feature| %>
+    <% if feature.featured_product %>
+        <article class="threeAcross">
       <%= image_tag(feature.image_url, :width => "298", :height => "139", :alt => " ")%>
   <div class="a_content"> <p>In: <span class="cat_title">Accessories</span></p>
     <header><h2 class="item_title"><%= feature.name %></h2></header>
@@ -13,6 +13,7 @@
   </div><!--a_content-->
 </article><!--End threeAcross -->
 <% end %>
+    <% end %>
 
 
 <div class="clearLeft"></div>
